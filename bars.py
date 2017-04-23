@@ -2,8 +2,9 @@ import json
 
 
 def load_data(filepath):
-    pass
-
+    with open(filepath, 'r', encoding='cp1251') as file:
+        json_data = json.load(file)
+    return json_data
 
 def get_biggest_bar(data):
     pass

@@ -89,7 +89,3 @@ if __name__ == '__main__':
         print('Name: {}\nAddress: {}'.format(closest_bar['Name'], 
                                          closest_bar['Address'] ))
 
-
-
-
-['Name'], biggest_bar['SeatsCount']

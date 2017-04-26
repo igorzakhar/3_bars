@@ -92,4 +92,3 @@ if __name__ == '__main__':
 
 
 
-['Name'], biggest_bar['SeatsCount']

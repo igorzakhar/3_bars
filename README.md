@@ -5,7 +5,7 @@
 
 # Как запустить
 Программа требует для своей работы установленного интерпретатора Python версии 3.5.  
-Для использования программы нужно установить стороннюю библиотеку [requests] (https://github.com/kennethreitz/requests).  
+Для использования программы нужно установить стороннюю библиотеку [requests](https://github.com/kennethreitz/requests).  
 Библиотеку requests можно установить через файл зависимостей приложения requirements.txt:
 ```#!bash
 $ pip3 install -r requirements.txt

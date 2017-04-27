@@ -81,6 +81,7 @@ def result_output(json_data, biggest_bar, smallest_bar):
         print('Name: {}\nAddress: {}'.format(closest_bar['Name'], 
                                          closest_bar['Address'] ))
 
+
 if __name__ == '__main__':
     
     content, headers = get_remote_file()
@@ -92,3 +93,4 @@ if __name__ == '__main__':
     biggest_bar = get_biggest_bar(json_data)
     
     result_output(json_data, biggest_bar, smallest_bar)
+

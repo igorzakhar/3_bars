@@ -59,7 +59,6 @@ def get_user_coordinate():
 
 def get_closest_bar(data, latitude, longitude):
     distance = lambda data_item: get_distance(data_item, latitude, longitude)
-    #lst = [get_distance(item_data, latitude, longitude) for item_data in data]
     closest_bar = min(data, key=distance)
     return closest_bar
 
@@ -69,15 +68,8 @@ def process_args():
                         help='Your coordinates: latitude longitude')
     return parser.parse_args()
 
-if __name__ == '__main__':
+def result_output(json_data, biggest_bar, smallest_bar):
     args = process_args()
-    content, headers = get_remote_file()
-    zip_file = save_file(content, headers)
-    unzip_filename = unzip_file(zip_file)
-    content_encoding = headers['Content-Encoding']
-    json_data = load_data(unzip_filename, content_encoding)
-    smallest_bar = get_smallest_bar(json_data)
-    biggest_bar = get_biggest_bar(json_data)
     print("The biggest bar: {}, {} seats".format(biggest_bar['Name'], 
                                            biggest_bar['SeatsCount']))
     print("The smallest bar: {}, {} seats".format(smallest_bar['Name'],
@@ -89,6 +81,14 @@ if __name__ == '__main__':
         print('Name: {}\nAddress: {}'.format(closest_bar['Name'], 
                                          closest_bar['Address'] ))
 
-
-
-
+if __name__ == '__main__':
+    
+    content, headers = get_remote_file()
+    zip_file = save_file(content, headers)
+    unzip_filename = unzip_file(zip_file)
+    content_encoding = headers['Content-Encoding']
+    json_data = load_data(unzip_filename, content_encoding)
+    smallest_bar = get_smallest_bar(json_data)
+    biggest_bar = get_biggest_bar(json_data)
+    
+    result_output(json_data, biggest_bar, smallest_bar)

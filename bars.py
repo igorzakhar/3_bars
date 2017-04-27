@@ -57,16 +57,19 @@ def get_user_coordinate():
     latitude, longitude = [float(item) for item in input(message).split() ]
     return latitude, longitude
 
+
 def get_closest_bar(data, latitude, longitude):
     distance = lambda data_item: get_distance(data_item, latitude, longitude)
     closest_bar = min(data, key=distance)
     return closest_bar
+
 
 def process_args():
     parser = argparse.ArgumentParser("Get the closest bar to user coordinates")
     parser.add_argument('-c', '--closest', action='store_true', 
                         help='Your coordinates: latitude longitude')
     return parser.parse_args()
+
 
 def result_output(json_data, biggest_bar, smallest_bar):
     args = process_args()

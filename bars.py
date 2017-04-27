@@ -82,7 +82,7 @@ def result_output(json_data, biggest_bar, smallest_bar):
         closest_bar = get_closest_bar(json_data, latitude, longitude)
         print('-------/Closest Bar/-------')
         print('Name: {}\nAddress: {}'.format(closest_bar['Name'], 
-                                         closest_bar['Address'] ))
+                                             closest_bar['Address']))
 
 
 if __name__ == '__main__':
